@@ -1,0 +1,10 @@
+[package]
+name = "openscad_to_csgrs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tree-sitter = "0.20"
+tree-sitter-openscad = "0.5"
+csgrs = { git = "https://github.com/timschmidt/csgrs" }   
+nalgebra = "0.33.2"
