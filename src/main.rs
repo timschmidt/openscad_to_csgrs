@@ -1,8 +1,8 @@
 use tree_sitter::{Parser, Node, Tree};
-use tree_sitter_openscad as ts_openscad; // Make sure this crate is in Cargo.toml
+use tree_sitter_openscad as ts_openscad;
 
 use csgrs::CSG;
-use csgrs::Axis; // for mirror if you want it
+use csgrs::Axis;
 
 use nalgebra::Vector3;
 
@@ -403,7 +403,7 @@ fn eval_module_call(node: Node, code: &str) -> Option<CSG> {
 fn parse_arguments(args_node: Node, code: &str) -> Vec<f64> {
     // The grammar: arguments => '(' [ expression or assignment ] ( ',' expression/assignment )* ')'
     // We’ll just look for numeric or bracketed array. 
-    // For a real interpreter, you'd parse expressions, named parameters, etc.
+    // For a real interpreter, we'll have to parse expressions, named parameters, etc.
     let mut vals = Vec::new();
     for child in args_node.children(&mut args_node.walk()) {
         let kind = child.kind();
