@@ -16,3 +16,4 @@ Argument/Expression Parsing in this example is very simplified. We just look for
 - for(...) loops, if(...) statements, etc.: We can detect those node types (e.g. "for_block", "if_block") and expand them in an AST pass or interpret them on the fly (unrolling loops, branching on if conditions, etc.).
 - Variables and Scope: In OpenSCAD, you can have a = 10; translate([a,0,0]) cube(a);. We can store variables in a symbol table, handle scoping, and so forth.
 - Modules (user-defined subroutines): A node of type module_declaration can define a named block of code. We can store it in a map from name → parse subtree, then when we see a module_call to that name, we expand or interpret that subtree.
+- Use more complete OpenSCAD grammar: https://github.com/mkatychev/tree-sitter-openscad/blob/master/CHANGELOG.md#version-060
